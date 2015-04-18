@@ -16,6 +16,7 @@ just keep in mind the goal.
 **Needs:** sbt for building/running
 
 **Potential todos**
+
 * Create some UI (i.e. web/Java2d)
 * Add support for multiple players
 * Add support for additional pieces (i.e. Lizard and Spock)
