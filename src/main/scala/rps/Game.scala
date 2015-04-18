@@ -39,11 +39,7 @@ object Game extends App {
   var computerScore = 0
 
   //this populates the initial state with two random moves and a random state
-  moves += Move(
-    randomPiece,
-    randomPiece,
-    randomStatus
-  )
+  moves += Move(randomPiece, randomPiece, randomStatus)
 
   //let's go!
   play()
@@ -97,7 +93,6 @@ object Game extends App {
       printMenu()
     }
   }
-
 
   def randomPiece: Piece = pieces(Random.nextInt(pieces.size))
 
@@ -158,17 +153,20 @@ object Game extends App {
    * to another piece.
    */
   abstract class Piece() extends Comparable[Piece] {
-    val name = "piece"
+
+    /**
+     * The name of the Piece, by default, the name of the enclosing class
+     */
+    val name = this.getClass.getSimpleName
   }
 
   /*
    * Each of the three game pieces Rock, Paper, and Scissors should
-   * override the name value and provide the appropriate logic for
+   * provide the appropriate logic for
    * determining the /win/loss/ of comparing two pieces together.
    */
 
   class Rock extends Piece {
-    override val name = "rock"
 
     override def compareTo(piece: Piece): Int = {
       piece match {
@@ -180,7 +178,6 @@ object Game extends App {
   }
 
   class Paper extends Piece {
-    override val name = "paper"
 
     override def compareTo(piece: Piece): Int = {
       piece match {
@@ -192,7 +189,6 @@ object Game extends App {
   }
 
   class Scissors extends Piece {
-    override val name = "scissors"
 
     override def compareTo(piece: Piece): Int = {
       piece match {
@@ -209,8 +205,6 @@ object Game extends App {
    * @param computerPiece the piece the computer chose
    * @param status the game status from the play perspective
    */
-  case class Move(playerPiece: Piece,
-                  computerPiece: Piece,
-                  status: Int)
+  case class Move(playerPiece: Piece, computerPiece: Piece, status: Int)
 
 }
