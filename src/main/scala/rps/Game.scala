@@ -68,24 +68,24 @@ object Game extends App {
           val computerPiece = computeMove()
 
           //determine a winner
-          val status = playerPiece.compareTo(computerPiece)
+          val status = computerPiece.compareTo(playerPiece)
 
           // determine who wins
           // print out the results
           //update game state (scores and moves)
           status match {
             case WIN => {
-              println(s"WIN! (p)${playerPiece.name} beats (c)${computerPiece.name}.")
-              playerScore += 1
-            }
-            case LOSE => {
-              println(s"LOSE! (c)${computerPiece.name} beats (p)${playerPiece.name}.")
+              println(s"(c)${computerPiece.name} beats (p)${playerPiece.name}.")
               computerScore += 1
             }
-            case DRAW => println(s"DRAW! (c)${computerPiece.name} draws (p)${playerPiece.name}.")
+            case LOSE => {
+              println(s"(p)${playerPiece.name} beats (c)${computerPiece.name}.")
+              playerScore += 1
+            }
+            case DRAW => println(s"(c)${computerPiece.name} draws (p)${playerPiece.name}.")
           }
           //add our move to the moves list
-          moves += Move(playerPiece, computerPiece, status)
+          moves += Move(computerPiece, playerPiece, status)
         }
       }
 
@@ -201,10 +201,10 @@ object Game extends App {
 
   /**
    * Holds the results of a game
-   * @param playerPiece the piece the player chose
    * @param computerPiece the piece the computer chose
-   * @param status the game status from the play perspective
+   * @param playerPiece the piece the player chose
+   * @param status the game status from the computer perspective
    */
-  case class Move(playerPiece: Piece, computerPiece: Piece, status: Int)
+  case class Move(computerPiece: Piece, playerPiece: Piece, status: Int)
 
 }
