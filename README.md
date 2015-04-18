@@ -1,6 +1,6 @@
 # README #
 
-This is the initial imply of a simple RPS game using the 'optimal algorithm'
+This is the initial impl of a simple RPS game using the 'optimal algorithm'
 strategy for winning the game.  I have tried to capture good/acceptable
 Scala idioms/standards a much as possible, and documented as much as possible.
 (With the obvious exception of having everything in one file.
