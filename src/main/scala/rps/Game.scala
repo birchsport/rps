@@ -38,9 +38,6 @@ object Game extends App {
   //keep track of the computer score
   var computerScore = 0
 
-  //this populates the initial state with two random moves and a random state
-  moves += Move(randomPiece, randomPiece, randomStatus)
-
   //let's go!
   play()
 
@@ -104,7 +101,11 @@ object Game extends App {
    * @return the computed piece
    */
   def computeMove(): Piece = {
-    val lastMove = moves.last
+    //get the last move.  If there isn't one, return a random one
+    val lastMove = moves.lastOption.getOrElse(
+      Move(randomPiece, randomPiece, randomStatus)
+    )
+
     lastMove.status match {
       // we lost, choose whatever was not played
       case LOSE => {
@@ -163,7 +164,7 @@ object Game extends App {
   /*
    * Each of the three game pieces Rock, Paper, and Scissors should
    * provide the appropriate logic for
-   * determining the /win/loss/ of comparing two pieces together.
+   * determining the 'win/loss' of comparing two pieces together.
    */
 
   class Rock extends Piece {
