@@ -12,9 +12,12 @@ To play, check this project out and import into IntelliJ.  There is no
 sbt or grade for it yet.  Please feel free to add.
 
 Also, please feel free to refactor, document, alter as you see fit,
-jut keep in mind the goal.
+just keep in mind the goal.
 
-Potential todos
-Create some UI (i.e. web/Java2d)
-Add support for multiple players
-add support for additional pieces (i.e. Lizard and Spock)
+**Needs:** sbt for building/running
+
+**Potential todos**
+- Create some UI (i.e. web/Java2d)
+- Add support for multiple players
+- Add support for additional pieces (i.e. Lizard and Spock)
+- Add support for more complex piece computation (analysis of previous moves, not just focusing on the last move)
