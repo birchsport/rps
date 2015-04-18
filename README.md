@@ -8,12 +8,10 @@ Scala idioms/standards a much as possible, and documented as much as possible.
 The initial idea is to use it as a base for teaching students 
 how to write a simple game like this from scratch.
 
-To play, check this project out and import into IntelliJ.  
+To play, check this project, cd to the directory, and type 'sbt run'.
 
 Also, please feel free to refactor, document, alter as you see fit,
 just keep in mind the goal.
-
-**Needs:** sbt for building/running
 
 **Potential todos**
 
